@@ -1,5 +1,6 @@
 .DS_Store
 
-synthea/data/*
-synthea/synthea-with-dependencies.jar
+synthea-with-dependencies.jar
+data/synthea/*
+
 
