@@ -71,7 +71,16 @@ pip install -r requirements.txt
 wget https://github.com/synthetichealth/synthea/releases/download/master-branch-latest/synthea-with-dependencies.jar
 
 # data with pregancies
-java -jar ./synthea-with-dependencies.jar --exported.fhir.bulk_data TRUE --exporter.baseDirectory data/synthea/pregnancy -p 1000 -g F -m Pregnancy
+java -jar ./synthea-with-dependencies.jar \
+  --exporter.baseDirectory data/synthea/pregnancy \
+  --exporter.fhir.bulk_data true \
+  -p 1000 \
+  -g F \
+  -m Pregnancy
 
 # data with hypertension
-java -jar ./synthea-with-dependencies.jar --exported.fhir.bulk_data TRUE --exporter.baseDirectory data/synthea/hypertension -p 1000 -g F -m Hypertension
+java -jar ./synthea-with-dependencies.jar \
+  --exporter.baseDirectory data/synthea/hypertension \
+  --exporter.fhir.bulk_data true \
+  -p 1000 \
+  -m Hypertension
