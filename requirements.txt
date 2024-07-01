@@ -1,0 +1,12 @@
+altair >= 5.1
+black >=23.10
+duckdb ~= 0.10
+duckdb-engine
+ibis-framework [bigquery,duckdb,pandas,polars,pyspark]
+ipykernel >= 6.25
+ipywidgets >= 8.1
+jupysql
+jupyter
+pandas >= 2.0
+pathling
+polars
