@@ -1,0 +1,58 @@
+{
+  "name": "momcare_procedure",
+  "title": "MomCare Procedure View",
+  "version": "0.1.0",
+  "url": "https://momcare.cot.pharmaccess.org/fhir/ViewDefinition/procedure",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/sql-on-fhir/StructureDefinition/ShareableViewDefinition",
+      "http://hl7.org/fhir/uv/sql-on-fhir/StructureDefinition/TabularViewDefinition"
+    ]
+  },
+  "status": "draft",
+  "resource": "Procedure",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "select": [
+    {
+      "column": [
+        {
+          "name": "encounter_id",
+          "path": "encounter.reference",
+          "type": "string",
+          "collection": false
+        },
+        {
+          "name": "procedure_time",
+          "path": "performed.ofType(dateTime)",
+          "type": "dateTime",
+          "collection": false
+        },
+        {
+          "name": "description_name",
+          "path": "code.text",
+          "type": "string",
+          "collection": false
+        }
+      ]
+    },
+    {
+      "forEachOrNull": "code.coding",
+      "column": [
+        {
+          "name": "system",
+          "path": "system",
+          "type": "uri",
+          "collection": false
+        },
+        {
+          "name": "code",
+          "path": "code",
+          "type": "code",
+          "collection": false
+        }
+      ]
+    }
+  ]
+}
