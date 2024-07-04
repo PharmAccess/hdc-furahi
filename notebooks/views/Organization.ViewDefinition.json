@@ -1,0 +1,35 @@
+{
+  "name": "momcare_organization",
+  "title": "MomCare Organization View",
+  "version": "0.1.0",
+  "url": "https://momcare.cot.pharmaccess.org/fhir/ViewDefinition/organization",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/sql-on-fhir/StructureDefinition/ShareableViewDefinition",
+      "http://hl7.org/fhir/uv/sql-on-fhir/StructureDefinition/TabularViewDefinition"
+    ]
+  },
+  "status": "draft",
+  "resource": "Organization",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "select": [
+    {
+      "column": [
+        {
+          "name": "visit_provider_id",
+          "path": "identifier.where(use = 'temp').value",
+          "type": "string",
+          "collection": false
+        },
+        {
+          "name": "visit_provider_name",
+          "path": "name",
+          "type": "string",
+          "collection": false
+        }
+      ]
+    }
+  ]
+}
